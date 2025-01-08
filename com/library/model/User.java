@@ -1,9 +1,15 @@
 package com.library.model;
 
-public class User {
+public abstract class User {
 
     private int userId;
     private String userName;
+
+    // Methods
+    protected abstract void addPatron();
+    protected abstract void removePatron();
+    protected abstract void updatePatron();
+    protected abstract void printPatronDetails();
 
     public User(int userId, String userName) {
         this.userId = userId;

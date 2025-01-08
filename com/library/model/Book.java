@@ -1,16 +1,22 @@
 package com.library.model;
 
-public class Book {
+public abstract class Book {
 
     // Book attributes
-    String title;
-    String author;
-    String ISBN;
-    int publicationYear;
+    private String title;
+    private String author;
+    private int ISBN;
+    private int publicationYear;
+
+    // Methods
+    protected abstract void addBook();
+    protected abstract void removeBook();
+    protected abstract void updateBook();
+    protected abstract void searchBook();
 
     public Book() {}
 
-    public Book(String title, String author, String ISBN, int publicationYear) {
+    public Book(String title, String author, int ISBN, int publicationYear) {
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
@@ -33,11 +39,11 @@ public class Book {
         this.author = author;
     }
 
-    public String getISBN() {
+    public int getISBN() {
         return ISBN;
     }
 
-    public void setISBN(String ISBN) {
+    public void setISBN(int ISBN) {
         this.ISBN = ISBN;
     }
 
@@ -51,7 +57,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "Book {" +
                 "title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", ISBN='" + ISBN + '\'' +

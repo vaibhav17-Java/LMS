@@ -1,27 +1,31 @@
 package com.library.util;
 
-import com.library.interfaces.UserInterface;
+import com.library.model.User;
 
-public class UserManagement implements UserInterface {
+public class UserManagement extends User {
 
+
+    public UserManagement(int userId, String userName) {
+        super(userId, userName);
+    }
 
     @Override
-    public void addPatron() {
+    protected void addPatron() {
 
     }
 
     @Override
-    public void removePatron() {
+    protected void removePatron() {
 
     }
 
     @Override
-    public void updatePatron() {
+    protected void updatePatron() {
 
     }
 
     @Override
-    public void printPatronDetails() {
+    protected void printPatronDetails() {
 
     }
 }
