@@ -1,71 +1,39 @@
-import java.util.*;
+import com.library.model.Book;
+import com.library.model.Library;
+import com.library.model.User;
+import com.library.util.BookManagement;
+import com.library.util.UserManagement;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("---------------- WELCOME TO LMS SYSTEM ----------------");
-        System.out.println("1. Add Book - ");
-        System.out.println("2. Search Book - ");
-        System.out.println("3. Update Book Details - ");
-        System.out.println("4. Delete Book - ");
-        System.out.println("5. Show Book Details - ");
-        System.out.println("6. Show All Book Details - ");1
-        System.out.println("7. Show Borrowed Books - ");
-        System.out.println("8. Add User - ");
-        System.out.println("9. Update User Details - ");
-        System.out.println("10. Book Checkin - ");
-        System.out.println("11. Book checkout - ");
-        System.out.println("Enter you choice :: ");
-        Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
-        switch (choice) {
-            case 1:
-                System.out.println("-------- ADD BOOK -------");
-                break;
+        // Display Library Details
+        Library library = new Library("LMS_Pune_1", "Pune");
+        Book book1 = new BookManagement("Java", "AAAAA", 11111111, 2021);
+        User user1 = new UserManagement(101, "ABC");
+        library.setBookList(book1);
+        library.setUserList(user1);
+        library.displayLibraryDetails();
 
-            case 2:
-                System.out.println("-------- SEARCH BOOK -------");
-                break;
+        // Add Book & User
+        Book book2 = new BookManagement("Node", "BBBBB", 22222222, 2022);
+        book2.displayBookDetails(book2);
 
-            case 3:
-                System.out.println("-------- UPDATE BOOK -------");
-                break;
+        // Update Book & User
+        User user2 = new UserManagement(102, "XYZ");
+        user2.displayUserDetails(user2);
 
-            case 4:
-                System.out.println("-------- DELETE BOOK -------");
-                break;
+        // Remove Book & User
 
-            case 5:
-                System.out.println("-------- SHOW BOOK -------");
-                break;
 
-            case 6:
-                System.out.println("-------- SHOW ALL BOOKS -------");
-                break;
 
-            case 7:
-                System.out.println("-------- SHOW BORROWED BOOKS -------");
-                break;
-            case 8:
-                System.out.println("-------- ADD USER -------");
-                break;
+        // Borrow Book and update the record
 
-            case 9:
-                System.out.println("-------- UPDATE USER -------");
-                break;
 
-            case 10:
-                System.out.println("-------- BOOK  -------");
-                break;
 
-            case 11:
-                System.out.println("-------- BOOK CHECKOUT -------");
-                break;
+        // Return Book and update the record
 
-            default:
-                System.out.println("-------- Exit -------");
-                break;
-        }
+
     }
 }

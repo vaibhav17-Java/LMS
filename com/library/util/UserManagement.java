@@ -4,28 +4,28 @@ import com.library.model.User;
 
 public class UserManagement extends User {
 
-
     public UserManagement(int userId, String userName) {
         super(userId, userName);
     }
 
     @Override
-    protected void addPatron() {
+    public void addUser() {
 
     }
 
     @Override
-    protected void removePatron() {
+    public void removeUser() {
 
     }
 
     @Override
-    protected void updatePatron() {
+    public void updateUser() {
 
     }
 
     @Override
-    protected void printPatronDetails() {
+    public void searchUser() {
 
     }
+
 }

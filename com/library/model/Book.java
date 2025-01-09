@@ -13,8 +13,8 @@ public abstract class Book {
     protected abstract void removeBook();
     protected abstract void updateBook();
     protected abstract void searchBook();
-
-    public Book() {}
+    protected abstract void borrowBook();
+    protected abstract void returnBook();
 
     public Book(String title, String author, int ISBN, int publicationYear) {
         this.title = title;
@@ -55,13 +55,11 @@ public abstract class Book {
         this.publicationYear = publicationYear;
     }
 
-    @Override
-    public String toString() {
-        return "Book {" +
-                "title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", publicationYear=" + publicationYear +
-                '}';
+    public void displayBookDetails(Book book) {
+        System.out.println("Book Name: " + book.getTitle());
+        System.out.println("Author Name: " + book.getAuthor());
+        System.out.println("ISBN Number: " + book.getISBN());
+        System.out.println("Publication Year: " + book.getPublicationYear());
     }
+
 }

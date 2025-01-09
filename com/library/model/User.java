@@ -6,10 +6,10 @@ public abstract class User {
     private String userName;
 
     // Methods
-    protected abstract void addPatron();
-    protected abstract void removePatron();
-    protected abstract void updatePatron();
-    protected abstract void printPatronDetails();
+    public abstract void addUser();
+    public abstract void removeUser();
+    public abstract void updateUser();
+    public abstract void searchUser();
 
     public User(int userId, String userName) {
         this.userId = userId;
@@ -32,11 +32,9 @@ public abstract class User {
         this.userName = userName;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                '}';
+    public void displayUserDetails(User user) {
+        System.out.println("User ID: " + user.getUserId());
+        System.out.println("User Name: " + user.getUserName());
     }
+
 }
