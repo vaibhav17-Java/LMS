@@ -1,43 +1,62 @@
 package com.library.model;
 
-public abstract class Book {
+import java.util.Date;
+
+public class Book {
 
     // Book attributes
-    private String title;
-    private String author;
+    private int bookId;
+    private String bookName;
+    private String authorName;
     private int ISBN;
     private int publicationYear;
+    boolean isAvailable;
 
-    // Methods
-    protected abstract void addBook();
-    protected abstract void removeBook();
-    protected abstract void updateBook();
-    protected abstract void searchBook();
-    protected abstract void borrowBook();
-    protected abstract void returnBook();
+    private int borrowerId;
+    private Date borrowDate;
+    private Date returnDate;
+    private boolean pendingReturn;
 
-    public Book(String title, String author, int ISBN, int publicationYear) {
-        this.title = title;
-        this.author = author;
+    public Book(int bookId, String title, String author, int ISBN, int publicationYear, boolean isAvailable) {
+        this.bookId = bookId;
+        this.bookName = title;
+        this.authorName = author;
         this.ISBN = ISBN;
         this.publicationYear = publicationYear;
+        this.isAvailable = isAvailable;
+    }
+
+    public Book () {}
+
+    public Book (int bookId, int borrowerId, Date borrowDate, Date returnDate, boolean pendingReturn) {
+        this.bookId = bookId;
+        this.borrowerId = borrowerId;
+        this.borrowDate = borrowDate;
+        this.returnDate = returnDate;
+        this.pendingReturn = pendingReturn;
+    }
+
+    public int getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
     }
 
     public String getTitle() {
-        return title;
+        return bookName;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.bookName = title;
     }
 
     public String getAuthor() {
-        return author;
+        return authorName;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+    public void setAuthor(String author) { this.authorName = author; }
 
     public int getISBN() {
         return ISBN;
@@ -55,11 +74,43 @@ public abstract class Book {
         this.publicationYear = publicationYear;
     }
 
-    public void displayBookDetails(Book book) {
-        System.out.println("Book Name: " + book.getTitle());
-        System.out.println("Author Name: " + book.getAuthor());
-        System.out.println("ISBN Number: " + book.getISBN());
-        System.out.println("Publication Year: " + book.getPublicationYear());
+    public boolean isAvailable() {
+        return isAvailable;
     }
 
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
+    public int getBorrowerId() {
+        return borrowerId;
+    }
+
+    public void setBorrowerId(int borrowerId) {
+        this.borrowerId = borrowerId;
+    }
+
+    public Date getBorrowDate() {
+        return borrowDate;
+    }
+
+    public void setBorrowDate(Date borrowDate) {
+        this.borrowDate = borrowDate;
+    }
+
+    public Date getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(Date returnDate) {
+        this.returnDate = returnDate;
+    }
+
+    public boolean isPendingReturn() {
+        return pendingReturn;
+    }
+
+    public void setPendingReturn(boolean pendingReturn) {
+        this.pendingReturn = pendingReturn;
+    }
 }

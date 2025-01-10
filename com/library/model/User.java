@@ -1,20 +1,19 @@
 package com.library.model;
 
-public abstract class User {
+public class User {
 
+    // User attributes
     private int userId;
     private String userName;
+    private String address;
 
-    // Methods
-    public abstract void addUser();
-    public abstract void removeUser();
-    public abstract void updateUser();
-    public abstract void searchUser();
-
-    public User(int userId, String userName) {
+    public User(int userId, String userName, String address) {
         this.userId = userId;
         this.userName = userName;
+        this.address = address;
     }
+
+    public User() {}
 
     public int getUserId() {
         return userId;
@@ -32,9 +31,11 @@ public abstract class User {
         this.userName = userName;
     }
 
-    public void displayUserDetails(User user) {
-        System.out.println("User ID: " + user.getUserId());
-        System.out.println("User Name: " + user.getUserName());
+    public String getAddress() {
+        return address;
     }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }
